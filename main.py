@@ -4,7 +4,7 @@ import pyautogui
 from password_generator import PasswordGenerator
 
 # const values
-PASSWORD_LENGTH = 15
+PASSWORD_LENGTH = 11
 ENTER_KEY_VALUE = (1266, 689)
 REFRESH_KEY_VALUE = (1262, 623)
 BAR_KEY_VALUE = (916, 567)
@@ -20,7 +20,7 @@ while not keyboard.is_pressed('esc'):
         time.sleep(0.01)  # waiting until the page resets
         pyautogui.click(BAR_KEY_VALUE[0], BAR_KEY_VALUE[1])
         count_till_reset = 0
-    value = pwo.non_duplicate_password(PASSWORD_LENGTH)  # recreate a new password
+    value = pwo.non_duplicate_password(PASSWORD_LENGTH) + str(2023)  # recreate a new password
     keyboard.write(value)
     pyautogui.click(ENTER_KEY_VALUE[0], ENTER_KEY_VALUE[1])  # send the info
     count_till_reset += 1
